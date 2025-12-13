@@ -1,0 +1,30 @@
+{
+  "name": "tcc",
+  "version": "1.0.0",
+  "description": "a trivia's questions project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alves-Moises/tcc_senai_backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alves-Moises/tcc_senai_backend/issues"
+  },
+  "homepage": "https://github.com/alves-Moises/tcc_senai_backend#readme",
+  "dependencies": {
+    "@fastify/cors": "^11.2.0",
+    "@fastify/swagger": "^9.6.1",
+    "@fastify/swagger-ui": "^5.2.3",
+    "dotenv": "^17.2.3",
+    "fastify": "^5.6.2",
+    "mysql2": "^3.15.3",
+    "nodemon": "^3.1.11",
+    "uuid": "^13.0.0"
+  }
+}
