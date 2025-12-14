@@ -6,7 +6,9 @@ import {
     addQuestion, 
     listCompleteQuestions 
 } from "./questionController.js"
-
+import chalk, { colorNames } from "chalk"
+const bgWhite = chalk.bgWhite
+const green = chalk.green
 
 const createCompleteQuestion = async (req, res) => {
     const Question = req.body.question
