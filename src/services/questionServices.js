@@ -70,6 +70,9 @@ const updateQuestion = async (id, question) => {
 
 export { 
     getAllQuestions, 
-    createQuestion 
+    getQuestion,
+    createQuestion, 
+    deleteQuestion,
+    updateQuestion
 }
 
