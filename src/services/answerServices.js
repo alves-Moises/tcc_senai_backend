@@ -59,23 +59,10 @@ const deleteAnswer = async(
     return data    
 }
 
-const updateAnswer = async (
-    id, 
-    text
-) =>{
-    const query = `
-        update answers
-        set text = '${text}'
-        where answer_id = '${id}'
-        ;
-    `
-
-    const [data] = await db.query(query)
-    return data
-}
-
-
 export {
     createAnswer,
     getAllAnswersByQuestion
 }
+    getAllAnswersByQuestion,
+    deleteAnswer,
+    updateAnswer
