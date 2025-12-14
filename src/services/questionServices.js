@@ -7,6 +7,12 @@ const getAllQuestions = async () => {
     return questionList
 }
 
+const getQuestion = async (id) => {
+    const query = "select  * from questions where question_id = ?"
+    const Question = await db.query(query, [id])
+    
+    return Question
+}
 
 const createQuestion = async (question) => {
     const QuestionID = v4()
