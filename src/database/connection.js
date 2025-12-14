@@ -1,6 +1,12 @@
 import { configDotenv } from "dotenv";
 import mysql from "mysql2/promise"
 
+import chalk from "chalk"
+
+const green = chalk.green
+const yellow = chalk.yellow
+const bgYellow = chalk.bgYellow
+
 configDotenv()
 export const db = await mysql.createConnection({
     host: process.env.DB_HOST,
