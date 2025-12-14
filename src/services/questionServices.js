@@ -31,6 +31,19 @@ const createQuestion = async (question) => {
     }
 
 }
+
+const deleteQuestion = async (id) => {
+    const query = `
+        delete from questions
+        where question_id = '${id}'
+    `
+
+    const [data] = await db.query(query)
+    return data
+}
+
+
+
 export { 
     getAllQuestions, 
     createQuestion 
