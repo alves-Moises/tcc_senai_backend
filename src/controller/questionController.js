@@ -1,4 +1,10 @@
-import { createQuestion, getAllQuestions } from "../services/questionServices.js"
+import { 
+    createQuestion, 
+    deleteQuestion, 
+    getAllQuestions, 
+    getQuestion,
+    updateQuestion
+} from "../services/questionServices.js"
 
 
 const listQuestions = async (req, res) => {
