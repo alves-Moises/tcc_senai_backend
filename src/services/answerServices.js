@@ -47,6 +47,17 @@ const getAllAnswersByQuestion = async (
     return AnswerList
 }
 
+const deleteAnswer = async(
+    id
+) => {
+
+    const query = `
+        delete from answers where answer_id = '${id}'
+    `
+    const [data] = await db.query(query)
+
+    return data    
+}
 
 export {
     createAnswer,
