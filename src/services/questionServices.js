@@ -48,6 +48,24 @@ const deleteQuestion = async (id) => {
     return data
 }
 
+const updateQuestion = async (id, question) => {
+    const query = `
+        update questions
+        set question = ?
+        where question_id = ?
+    `
+    const [result] = await db.query(
+        query, 
+        [
+            question,
+            id
+        ]
+    )
+
+    return result
+}
+
+
 
 
 export { 
