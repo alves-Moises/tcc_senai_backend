@@ -5,10 +5,6 @@ import {
     updateAnswer
 } from "../services/answerServices.js"
 
-const getAnswerList = async() => {
-    
-}
-
 const getAnswerByQuestionId = async (id) => {
     const answerList = await getAllAnswersByQuestion(id)
     return answerList
@@ -22,7 +18,7 @@ const newAnswer = async (answerItem, QuestionId) => {
 
 const deleteAnswerById = async (req, res) => {
     const removed = await deleteAnswer(req.params.id)
-    
+
     if(removed.affectedRows == 0){
         res.code(404).send("Answer doesn't exist!")
     }
@@ -32,7 +28,7 @@ const deleteAnswerById = async (req, res) => {
 const updateAnswerById = async (req, res) => {
     const id = req.params.id
     const text = req.body.text
-    
+
     const result = await updateAnswer(
         id, 
         text
