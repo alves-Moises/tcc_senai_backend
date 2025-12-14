@@ -9,4 +9,4 @@ export const db = await mysql.createConnection({
     password: process.env.DB_PASS,
     database: process.env.DB_NAME
 })
-console.log
+console.log("conected")
