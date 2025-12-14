@@ -49,5 +49,6 @@ const getAllAnswersByQuestion = async (
 
 
 export {
-    createAnswer
+    createAnswer,
+    getAllAnswersByQuestion
 }
