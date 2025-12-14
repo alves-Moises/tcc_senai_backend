@@ -77,8 +77,7 @@ const updateAnswer = async (
 
 export {
     createAnswer,
-    getAllAnswersByQuestion
-}
     getAllAnswersByQuestion,
     deleteAnswer,
     updateAnswer
+}
