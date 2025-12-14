@@ -11,24 +11,19 @@ import {
 const createCompleteQuestion = async (req, res) => {
     const Question = req.body.question
     const AnswerList = req.body.answer_list
-    console.log(AnswerList)
 
-    const {id, question} =  await addQuestion(Question)
-    var AnswerData = []
-
-    AnswerList.forEach(
+    const {id, question} =  await (Question)
+    await AnswerList.forEach(
         async answerItem => {
-            const  data = await newAnswer(answerItem, id)
-            console.log(data)
-            AnswerData = [...AnswerData, data]
+            newAnswer(answerItem, id)
         }
     )
-    console.log(AnswerData)
+
     const QuestionData = await {
         "question": question,
-        "answer_list": AnswerData
+        "answer_list": AnswerList
     }
-    return res.code(201).send(QuestionData)
+    return res.code(201).send([QuestionData])
 }
 
 const getAllCompleteQuestions = async (req, res) => {
@@ -51,7 +46,9 @@ const getAllCompleteQuestions = async (req, res) => {
             return data
         }
     )
-    return res.code(200).send(questionListComplete)
+
+    const resolved = await Promise.all(questionListComplete)
+    return res.code(200).send(resolved)
 }
 
 export {
