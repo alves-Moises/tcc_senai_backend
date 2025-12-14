@@ -36,6 +36,18 @@ const createAnswer = async (
     return data
 }
 
+const getAllAnswersByQuestion = async (
+    questionId
+) => {
+    const query = `
+        select * from answers where question_id = '${questionId}';
+    `
+
+    const AnswerList = await db.query(query)
+    return AnswerList
+}
+
+
 export {
     createAnswer
 }
