@@ -4,6 +4,7 @@ import { questionRoutes } from "./routes/questionRoutes.js"
 import { configDotenv } from "dotenv"
 import fastifySwagger from "@fastify/swagger"
 import fastifySwaggerUi from "@fastify/swagger-ui"
+import { anwserRoutes } from "./routes/answerRoutes.js"
 
 configDotenv()
 export const buildApp = () => {
@@ -41,6 +42,10 @@ export const buildApp = () => {
     app.register(
         questionRoutes, 
         {prefix: "/questions"} 
+    )
+    app.register(
+        anwserRoutes,
+        {prefix: "/answers"}
     )
 
 
