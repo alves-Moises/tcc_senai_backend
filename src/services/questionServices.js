@@ -3,7 +3,7 @@ import {db} from "../database/connection.js"
 
 
 const getAllQuestions = async () => {
-    const questionList = await db.query("select  *  from questions")
+    const questionList = await db.query("select * from questions;")
     return questionList
 }
 
@@ -31,5 +31,8 @@ const createQuestion = async (question) => {
     }
 
 }
-export { getAllQuestions, createQuestion }
+export { 
+    getAllQuestions, 
+    createQuestion 
+}
 
