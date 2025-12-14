@@ -15,7 +15,7 @@ export const db = await mysql.createConnection({
     password: process.env.DB_PASS,
     database: process.env.DB_NAME
 })
-console.log("conected")console.log(green("conected..."))
+console.log(green("conected..."))
 const Host = `${db.host}/${db.port}`
 db.on(
     "conection", 
