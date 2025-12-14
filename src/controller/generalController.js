@@ -1,5 +1,11 @@
-import { newAnswer } from "./answerController.js"
-import { addQuestion } from "./questionController.js"
+import { 
+    getAnswerByQuestionId, 
+    newAnswer
+} from "./answerController.js"
+import { 
+    addQuestion, 
+    listCompleteQuestions 
+} from "./questionController.js"
 
 
 const createCompleteQuestion = async (req, res) => {
@@ -18,7 +24,7 @@ const createCompleteQuestion = async (req, res) => {
         }
     )
     console.log(AnswerData)
-    const QuestionData = {
+    const QuestionData = await {
         "question": question,
         "answer_list": AnswerData
     }
