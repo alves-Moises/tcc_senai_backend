@@ -2,7 +2,14 @@ import {
     createCompleteQuestion,
     getAllCompleteQuestions
 } from "../controller/generalController.js"
-import { listQuestions } from "../controller/questionController.js"
+
+import { 
+    deleteQuestionById, 
+    getQuestionByID, 
+    listQuestions, 
+    updateQuestionById
+} from "../controller/questionController.js"
+
 
 
 const questionRoutes = async (app, opt) => {
