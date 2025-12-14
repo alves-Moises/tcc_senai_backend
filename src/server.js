@@ -1,6 +1,8 @@
 import { configDotenv } from "dotenv";
 import { buildApp } from "./app.js";
-
+import chalk from "chalk"
+const yellow = chalk.yellow
+const bgYellow = chalk.bgYellow
 configDotenv()
 
 const app = buildApp()
@@ -16,8 +18,8 @@ app.listen(
             process.exit(1)
         }
 
-        console.log(`Server running at ${addr}`)
+        console.log(`${yellow("Server running at")} ${bgYellow(addr)}`)
     }
 )   
 
-export {app}
+export { app }
