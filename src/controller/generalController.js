@@ -33,8 +33,7 @@ const createCompleteQuestion = async (req, res) => {
 
 const getAllCompleteQuestions = async (req, res) => {
     const [questionList] = await listCompleteQuestions()
-    // console.log(questionList)
-    const questionListComplete = questionList.map(
+    const questionListComplete = await questionList.map(
         async (
             {
                 question_id, 
@@ -43,15 +42,12 @@ const getAllCompleteQuestions = async (req, res) => {
         ) => {
             const questText = question
             const answerList = await getAnswerByQuestionId(question_id) 
-            // console.log(answerList)
-            
+            const resolvedList = await Promise.all(answerList)
+
             const data = {
                 question: questText,
-                answers: answerList[0]
+                answers: resolvedList[0]
             }
-            console.log("VVVVVVV")
-            console.log(data)
-            console.log("^^^^^ ")
             return data
         }
     )
