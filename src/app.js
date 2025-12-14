@@ -1,5 +1,5 @@
 import cors from "@fastify/cors"
-import Fastify, { fastify } from "fastify"
+import Fastify from "fastify"
 import { questionRoutes } from "./routes/questionRoutes.js"
 import { configDotenv } from "dotenv"
 import fastifySwagger from "@fastify/swagger"
