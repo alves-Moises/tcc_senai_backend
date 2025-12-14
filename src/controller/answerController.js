@@ -1,6 +1,8 @@
 import { 
     createAnswer, 
-    getAllAnswersByQuestion 
+    deleteAnswer, 
+    getAllAnswersByQuestion, 
+    updateAnswer
 } from "../services/answerServices.js"
 
 const getAnswerList = async() => {
@@ -44,7 +46,5 @@ const updateAnswerById = async (req, res) => {
 
 export {
     newAnswer,
-    getAnswerByQuestionId,
-    deleteAnswerById,
-    updateAnswerById
+    getAnswerByQuestionId
 }
