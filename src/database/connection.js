@@ -7,7 +7,6 @@ export const db = await mysql.createConnection({
     port: process.env.DB_PORT,
     user: process.env.DB_USER,
     password: process.env.DB_PASS,
-    database: DB_NAME
+    database: process.env.DB_NAME
 })
-
-db.on("connection", () => {console.log("coencted")})
+console.log
