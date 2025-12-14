@@ -73,5 +73,8 @@ const updateQuestionById = async (req, res) => {
 export { 
     listQuestions,
     listCompleteQuestions,
-    addQuestion
+    getQuestionByID,
+    updateQuestionById,
+    addQuestion,
+    deleteQuestionById
 }
