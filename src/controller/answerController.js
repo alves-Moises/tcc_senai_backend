@@ -44,5 +44,7 @@ const updateAnswerById = async (req, res) => {
 
 export {
     newAnswer,
-    getAnswerByQuestionId
+    getAnswerByQuestionId,
+    deleteAnswerById,
+    updateAnswerById
 }
