@@ -8,7 +8,7 @@ import { anwserRoutes } from "./routes/answerRoutes.js"
 
 configDotenv()
 export const buildApp = () => {
-    const app = Fastify({logger: true})
+    const app = Fastify({logger: false})
 
     app.register(
         cors, 
