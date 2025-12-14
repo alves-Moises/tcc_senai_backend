@@ -27,6 +27,21 @@ const deleteAnswerById = async (req, res) => {
     res.code(200).send("Answer deleted successfull")
 }
 
+const updateAnswerById = async (req, res) => {
+    const id = req.params.id
+    const text = req.body.text
+    
+    const result = await updateAnswer(
+        id, 
+        text
+    )
+    if(result.affectedRows == 0){
+        return res.status(404).send("Answer doesn't exist...")
+    }
+
+    return res.status(200).send("Update successfull")
+}
+
 export {
     newAnswer,
     getAnswerByQuestionId
