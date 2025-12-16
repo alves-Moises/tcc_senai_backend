@@ -1,4 +1,12 @@
-import { deleteAnswerById, updateAnswerById } from "../controller/answerController.js"
+import { 
+    deleteAnswerById, 
+    updateAnswerById
+} from "../controller/answerController.js"
+
+import { 
+    deleteAnswer, 
+    patchAnswer
+} from "../utils/answerSchema.js"
 
 const anwserRoutes = async (app, opt) => {
     app.delete(
