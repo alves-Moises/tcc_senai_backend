@@ -2,7 +2,6 @@ To install dependences: ```npm i```
 
 To run: ```npm start```
 
-
 # Questions's Routes
 
 # post - /questions
@@ -23,7 +22,6 @@ To run: ```npm start```
         ]
     }
 ```
-
 
 ### get questions - ```/questions``` ( doesn't includes answers)
 
