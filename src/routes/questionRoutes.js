@@ -10,61 +10,81 @@ import {
     updateQuestionById
 } from "../controller/questionController.js"
 
-import { questionSchema } from "../utils/schemas.js"
-
-
+import { 
+    postQuestion ,
+    deleteQuestion,
+    getQuestions,
+    getQuestion,
+    patchQuestion,
+    getAllQuestions
+} from "../utils/questionSchema.js"
 
 const questionRoutes = async (app, opt) => {
-    
+    app.get(
+        "/",
+        {
+            schema: getQuestions.route,
+            response: {
+                200: getQuestions.response
+            }
+        },
+        listQuestions
+    ),
 
-    app.get("/" ,listQuestions),
-    app.get("/:id", getQuestionByID),
-    app.patch("/:id", updateQuestionById),
+    app.get(
+        "/:id", 
+        {
+            schema: getQuestion.route,
+            response: {
+                200: getQuestion.response,
+            }
+        },
+        getQuestionByID
+
+    ),
+    app.patch(
+        "/:id", 
+        {
+            schema: patchQuestion.route,
+            response: {
+                200: patchQuestion.response
+            }
+        },
+        updateQuestionById
+    ),
     
     app.post(
         "/", 
         {
-            schema: {
-                description: 'Crete a new question',
-                tags: ['Questions'],
-                body: {
-                    type: 'object',
-                    required: ['question', 'answer_list'],
-                    properties: {
-                        question: { type: 'string' },
-                        answer_list: {
-                            type: "array",
-                            items: {
-                                type: "object",
-                                required: [
-                                    "text", 
-                                    "correct"
-                                ],
-                                properties: {
-                                    text: {
-                                        type: "string",
-                                    },
-                                    correct: {
-                                        type: "string"
-                                    }
-                                }
-
-                            }
-
-                        }
-                    }
-                }
-            },
+            schema: postQuestion.route,
             response: {
-                201: questionSchema
+                201: postQuestion.response
             }
         },
         createCompleteQuestion
     ),
 
-
-    app.delete("/:id", deleteQuestionById),
-    app.get("/all", getAllCompleteQuestions)
+    app.delete(
+        "/:id", 
+        {
+            schema: deleteQuestion.route,
+            response: {
+                200: postQuestion.response
+            }
+        },
+        deleteQuestionById
+    )
+    
+    app.get(
+        "/all", 
+        {
+            schema: getAllQuestions.route,
+            response: {
+                200: getAllQuestions.response
+            }
+        },
+        getAllCompleteQuestions
+    )
 }
 
 
