@@ -13,7 +13,13 @@ const anwserRoutes = async (app, opt) => {
     ),
     
     app.patch(
-        "/:id", 
+        "/:id",
+        {
+            schema: patchAnswer.route,
+            response: {
+                200: patchAnswer.response
+            }
+        }, 
         updateAnswerById
     )
 }
