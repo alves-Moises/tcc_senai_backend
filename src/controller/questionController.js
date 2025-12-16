@@ -19,9 +19,9 @@ const listCompleteQuestions = async () => {
 }
 
 const getQuestionByID = async (req, res) => {
-    const question = await getQuestion(req.params.id)
+    const [question] = await getQuestion(req.params.id)
 
-    return question
+    res.send(question)
 }
 
 const addQuestion = async (question) => {
