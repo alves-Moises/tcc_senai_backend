@@ -14,7 +14,7 @@ const createCompleteQuestion = async (req, res) => {
     const Question = req.body.question
     const AnswerList = req.body.answer_list
 
-    const {id, question} =  await (Question)
+    const {id, question} =  await addQuestion(Question)
     await AnswerList.forEach(
         async answerItem => {
             newAnswer(answerItem, id)
