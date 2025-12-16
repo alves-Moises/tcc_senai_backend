@@ -34,7 +34,9 @@ const getAllCompleteQuestions = async (req, res) => {
         async (
             {
                 question_id, 
-                question
+                question,
+                created_at,
+                modified_at
             }
         ) => {
             const questText = question
@@ -43,6 +45,8 @@ const getAllCompleteQuestions = async (req, res) => {
 
             const data = {
                 question: questText,
+                created_at: created_at,
+                modified_at: modified_at,
                 answers: resolvedList[0]
             }
             return data
