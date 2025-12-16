@@ -10,10 +10,14 @@ import {
     updateQuestionById
 } from "../controller/questionController.js"
 
+import { questionSchema } from "../utils/schemas.js"
+
 
 
 const questionRoutes = async (app, opt) => {
-    app.get("/", listQuestions),
+    
+
+    app.get("/" ,listQuestions),
     app.get("/:id", getQuestionByID),
     app.patch("/:id", updateQuestionById),
     
