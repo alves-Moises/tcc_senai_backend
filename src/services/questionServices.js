@@ -8,8 +8,11 @@ const getAllQuestions = async () => {
 }
 
 const getQuestion = async (id) => {
-    const query = "select  * from questions where question_id = ?"
-    const Question = await db.query(query, [id])
+    const query = `
+    select  * from questions 
+    where question_id = '${id}';
+    `
+    const Question = await db.query(query)
     
     return Question
 }
